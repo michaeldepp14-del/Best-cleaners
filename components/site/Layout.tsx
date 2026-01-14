@@ -177,7 +177,8 @@ export const Footer = () => (
             </a>
             <div className="flex items-start gap-3">
               <MapPin size={18} className="text-[#f97316] shrink-0 mt-1" />
-              <span className="text-sm font-medium">{siteConfig.location}</span>
+              {/* Fixed: Use address from the first location in the array */}
+              <span className="text-sm font-medium">{siteConfig.locations[0].address}</span>
             </div>
           </div>
         </div>
@@ -193,7 +194,7 @@ export const Footer = () => (
     </div>
     
     {/* Mobile Sticky Bar */}
-    <div className="fixed bottom-0 left-0 w-full bg-white lg:hidden z-[100] grid grid-cols-2 h-16 shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+    <div className="fixed bottom-0 left-0 w-full bg-white lg:hidden z-[100] grid grid-cols-2 h-16 shadow-[0_-10px_30px_rgba(0,0,0,0.11)]">
        <a href={`tel:${siteConfig.phoneDigits}`} className="flex items-center justify-center gap-2 text-[#1e40af] font-black uppercase text-xs border-r border-slate-100">
           <Phone size={18} /> Call Us
        </a>
